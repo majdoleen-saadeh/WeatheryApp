@@ -34,8 +34,11 @@ import java.text.SimpleDateFormat
 import java.util.Date
 import java.util.Locale
 import android.util.Log
+import com.google.android.gms.location.FusedLocationProviderClient
+import com.google.android.gms.location.LocationServices
 
 class MainActivity : ComponentActivity() {
+
     private lateinit var pbLoading: ProgressBar
     private lateinit var rlMainLayout: RelativeLayout
     private lateinit var etCityName: EditText
@@ -54,14 +57,24 @@ class MainActivity : ComponentActivity() {
     private lateinit var ivWeather:ImageView
     private lateinit var weatherIcon:ImageView
     private lateinit var cvToolbar: CardView
+<<<<<<< HEAD
     private lateinit var tvClothingAdvice: TextView
+=======
+
+
+
+>>>>>>> 5343438068ef7f122278a5870c2aa26675dcace6
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
     setContentView(R.layout.activity_main)
 
+
+
         initViews()
         setupSearch()
         loadWeatherDate("Amman")
+
+
     }
     private fun getClothingAdvice(temp: Double): String {
         return when {
@@ -271,6 +284,7 @@ class MainActivity : ComponentActivity() {
             Toast.makeText(this, "Failed to load weather data", Toast.LENGTH_SHORT).show()
         }
         }
+
     }
 
 
