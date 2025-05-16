@@ -187,6 +187,22 @@
 
                     </LinearLayout>
 
+<<<<<<< HEAD
+                    <TextView
+                        android:id="@+id/tv_clothing_advice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:backgroundTint="#F8F6F6"
+                        android:text="Clothing advice will appear here"
+                        android:textSize="20dp"
+                        android:textColor="@color/white"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginEnd="16dp"
+                        android:fontFamily="sans-serif-medium"/>
+=======
+>>>>>>> 5343438068ef7f122278a5870c2aa26675dcace6
+
                 </LinearLayout>
                 
             </FrameLayout>

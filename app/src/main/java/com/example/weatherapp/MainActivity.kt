@@ -34,8 +34,11 @@ import java.text.SimpleDateFormat
 import java.util.Date
 import java.util.Locale
 import android.util.Log
+import com.google.android.gms.location.FusedLocationProviderClient
+import com.google.android.gms.location.LocationServices
 
 class MainActivity : ComponentActivity() {
+
     private lateinit var pbLoading: ProgressBar
     private lateinit var rlMainLayout: RelativeLayout
     private lateinit var etCityName: EditText
@@ -54,15 +57,36 @@ class MainActivity : ComponentActivity() {
     private lateinit var ivWeather:ImageView
     private lateinit var weatherIcon:ImageView
     private lateinit var cvToolbar: CardView
+<<<<<<< HEAD
+    private lateinit var tvClothingAdvice: TextView
+=======
 
+
+
+>>>>>>> 5343438068ef7f122278a5870c2aa26675dcace6
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
     setContentView(R.layout.activity_main)
 
+
+
         initViews()
         setupSearch()
         loadWeatherDate("Amman")
+
+
     }
+    private fun getClothingAdvice(temp: Double): String {
+        return when {
+            temp < 5 -> "It's very cold 🥶. Wear a heavy coat 🧥, gloves 🧤, and a scarf 🧣."
+            temp in 5.0..15.0 -> "It's cool 😌. Wear a jacket 🧥 or sweater."
+            temp in 15.0..25.0 -> "The weather is mild 🙂. A t-shirt 👕 or light jacket is fine."
+            temp > 25 -> "It's hot 🥵. Wear light clothing like shorts 🩳 and a t-shirt 👕."
+            else -> "Check the weather again for accurate clothing advice."
+        }
+    }
+
+
 
     private fun initViews(){
         pbLoading=findViewById(R.id.pb_loading)
@@ -83,6 +107,10 @@ class MainActivity : ComponentActivity() {
         ivWeather=findViewById(R.id.iv_weather)
         weatherIcon=findViewById(R.id.weather_icon)
         cvToolbar=findViewById(R.id.cv_toolbar)
+        tvClothingAdvice = findViewById(R.id.tv_clothing_advice)
+
+
+
     }
 
     private fun setupSearch() {
@@ -167,6 +195,12 @@ class MainActivity : ComponentActivity() {
 //                updateBackgroundImage(data.getString("weather"))
                 pbLoading.visibility = View.GONE
                 rlMainLayout.visibility = View.VISIBLE
+                tvTemp.text = "%.0f °C".format(data.getDouble("temp"))
+                val temp = data.getDouble("temp")
+                val advice = getClothingAdvice(temp)
+                tvClothingAdvice.text = advice
+
+
             } catch (e: JSONException) {
                 e.printStackTrace()
                 showError()
@@ -250,6 +284,7 @@ class MainActivity : ComponentActivity() {
             Toast.makeText(this, "Failed to load weather data", Toast.LENGTH_SHORT).show()
         }
         }
+
     }
 
 
