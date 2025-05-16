@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+<<<<<<< HEAD
   <component name="GradleMigrationSettings" migrationVersion="1" />
   <component name="GradleSettings">
     <option name="linkedExternalProjectsSettings">
@@ -13,6 +14,14 @@
             <option value="$PROJECT_DIR$/app" />
           </set>
         </option>
+=======
+  <component name="GradleSettings">
+    <option name="linkedExternalProjectsSettings">
+      <GradleProjectSettings>
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="gradleJvm" value="#GRADLE_LOCAL_JAVA_HOME" />
+        <option name="resolveExternalAnnotations" value="false" />
+>>>>>>> fe29f49676c2eb891b82262905f89366a49fca02
       </GradleProjectSettings>
     </option>
   </component>
