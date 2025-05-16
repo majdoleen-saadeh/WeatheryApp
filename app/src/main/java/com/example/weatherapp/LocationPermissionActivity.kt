@@ -25,12 +25,6 @@ class LocationPermissionActivity : AppCompatActivity() {
         if(checkLocationPermission()){goToMainActivity()}
         btnRequest.setOnClickListener{requestLocationPermission()}
 
-
-//        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-//            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-//            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-//            insets
-//    }
     }
     private fun checkLocationPermission(): Boolean {
         return ContextCompat.checkSelfPermission(this,Manifest.permission.ACCESS_FINE_LOCATION)==PackageManager.PERMISSION_GRANTED

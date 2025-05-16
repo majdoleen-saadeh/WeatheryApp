@@ -1,6 +1,5 @@
 <resources>
-    <string name="app_name">WeatherApp</string>
-
+    <string name="app_name">Weathery</string>
     <string name="search_places">Search Places</string>
     <string name="demo_date">9 may,2:18 pm</string>
     <string name="default_numbers">100</string>
